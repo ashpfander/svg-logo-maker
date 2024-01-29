@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // Links to shapes.js file to grab from
-const shapes = require('./lib/shapes.js');
+const {Circle, Triangle, Square} = require('./lib/shapes.js');
 
 // Creates questions for generating a customized logo
 const questions = [
