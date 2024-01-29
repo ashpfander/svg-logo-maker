@@ -29,3 +29,23 @@ const questions = [
         name: 'shape color',
     },
 ];
+
+// Function for creating a new file for the logo.svg
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>
+    err ? console.error(err) : console.log('Generated logo.svg!'));
+}
+
+// Function for initializing the questions and creating the file from the user input
+function init() {
+    // Uses inquirer package to prompt questions from questions array
+    inquirer.prompt(questions)
+    // Then takes the answers and creates the logo.svg file
+    .then((answers) => {
+        const logoGenerator = shapes(answers);
+        writeToFile('logo.svg', logoGenerator)
+    });
+}
+
+// Function to start the process
+init();
