@@ -2,8 +2,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// Links to shapes.js file to grab from
-const {Circle, Triangle, Square} = require('./lib/shapes.js');
+// Links to svg.js file
+const svg = require('./lib/svg.js');
 
 // Creates questions for generating a customized logo
 const questions = [
@@ -42,7 +42,7 @@ function init() {
     inquirer.prompt(questions)
     // Then takes the answers and creates the logo.svg file
     .then((answers) => {
-        const logoGenerator = shapes(answers);
+        const logoGenerator = svg(answers);
         writeToFile('logo.svg', logoGenerator)
     });
 }
