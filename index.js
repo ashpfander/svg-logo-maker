@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // Links to svg.js file
-const text = require('./lib/text.js');
+const Text = require('./lib/text.js');
 const {Circle, Triangle, Square} = require('./lib/shapes.js');
 
 // Creates questions for generating a customized logo
@@ -48,19 +48,37 @@ function init() {
 
         // Uses the Circle class if Circle is selected
         if (answers.shape === 'Circle') {
-            svgShape = new Circle();
+            svgShape = new Circle(answers.shapeColor);
         }
         // Uses the Triangle class if Triangle is selected
         if (answers.shape === 'Triangle') {
-            svgShape = new Triangle();
+            svgShape = new Triangle(answers.shapeColor);
         }
         // Uses the Square class if Square is selected
         if (answers.shape === 'Square') {
-            svgShape = new Square();
+            svgShape = new Square(answers.shapeColor);
         }
 
-        // const logoGenerator = svg(answers);
-        // writeToFile('logo.svg', logoGenerator)
+        const text = new Text(answers.text, answers.textColor);
+
+        // Creates a class for SVG with user input
+        class SVG {
+            render() {
+            return `<svg version="1.1"
+            width="300" height="200"
+            xmlns="http://www.w3.org/2000/svg">
+       
+            ${svgShape.render()}
+       
+            ${text.render()}
+       
+            </svg>`
+            }
+        }
+
+        // Creates the logo file from all of the responses
+        const logoGenerator = new SVG;
+        writeToFile('logo.svg', logoGenerator.render())
     });
 }
 
