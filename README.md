@@ -57,7 +57,7 @@ Once this repo has been cloned to your local system and opened in VS Code, you w
 
 ## Usage
 
-To quickly and easily create a simple logo in SVG format.
+To quickly and easily create a simple logo in SVG format. Just run `node index.js` in the terminal and it will generate the necessary questions to create the logo.
 
 ## Contributing
 
