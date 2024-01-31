@@ -34,7 +34,7 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
 
 ## Video Tutorial
 
-[SVG Logo Maker Walkthrough Video]()
+[SVG Logo Maker Walkthrough Video](https://drive.google.com/file/d/1elyxq2npq-p-Q6VWurQBXRAIOTuB_vRy/view)
 
 ## Example Logos
 
