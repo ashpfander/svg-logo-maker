@@ -36,6 +36,12 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
 
 [SVG Logo Maker Walkthrough Video]()
 
+## Example Logos
+
+![Circle logo](./examples/circle.svg)
+![Square logo](./examples/square.svg)
+![Triangle logo](./examples/triangle.svg)
+
 ## Table of Contents
 
 - [Installation](#installation)
